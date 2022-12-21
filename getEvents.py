@@ -1,0 +1,79 @@
+import http.client
+import json
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="127.0.0.1",
+  user="user",
+  password="TEST",
+  database="rescue and tactical"
+)
+
+print(mydb)
+
+conn = http.client.HTTPSConnection("api.kumscho.com")
+
+payload = ""
+
+conn.request("GET", "/events", payload)
+
+res = conn.getresponse()
+data = res.read()
+
+parse = json.loads(data)
+
+mycursor = mydb.cursor()
+
+lenght = len(parse)
+
+value = 0
+
+sql = "DELETE FROM events"
+
+mycursor.execute(sql)
+
+print("------------------------------ [START EVENTS] ----------------------------")
+
+
+def getDATA(token):
+    id = json.loads(parse[token]["name"])["de"].lower().replace(" ", "-").replace('"', '')
+    EventName = json.loads(parse[token]["name"])["de"]
+    dateFrom = parse[token]["date_from"]
+    dateTo = parse[token]["date_to"]
+    description = json.loads(parse[token]["event_description"])["de"]
+    url = "https://tickets.kumscho.com/" + parse[token]["logo_imageurl"]
+
+    arr = [id, EventName, dateFrom, dateTo, description, url]
+
+    sql = "INSERT INTO events (ID, EventName, Von, Bis, Beschreibung, Bild) VALUES (%s, %s, %s, %s, %s, %s)"
+
+    val = (arr[0], arr[1], arr[2], arr[3], arr[4], arr[5])
+
+    mycursor.execute(sql, val)
+
+
+    mydb.commit()
+
+
+    print("ID: " + arr[0])
+    print("Name: " + arr[1])
+    print("dateFrom: " + arr[2])
+    print("dateTo: " + arr[3])
+    print("Beschreibung: " + arr[4])
+    print("url: " + arr[5])
+    
+
+
+
+for x in parse:
+    if lenght > 0:
+        print("------------------------------------------------")
+        getDATA(value)
+        print("------------------------------------------------")
+        value = value + 1
+        lenght = lenght - 1
+
+print("---------------------------- [END EVENTS] ---------------------------- ")
+print("Code executed and ended with code [0]")
+
+x = input()
