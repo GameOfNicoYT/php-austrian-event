@@ -1,4 +1,4 @@
-dbHost = "127.0.0.1"
-dbUser = "user"
-dbPassword = "TEST"
-dbDatabase = "rescue and tactical"
+dbHost = ["Bitte nichts Manuel eingeben!"]
+dbUser = ["Bitte nichts Manuel eingeben!"]
+dbPassword = ["Bitte nichts Manuel eingeben!"]
+dbDatabase = ["Bitte nichts Manuel eingeben!"]
