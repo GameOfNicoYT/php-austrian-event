@@ -10,3 +10,4 @@
 2. Website
     2.1 Öffne die Datei "./init.py" und lasse die Software eine Tabelle Erstellen und alles Konfigurieren.
     2.2 Das getEvent.py script muss extern zum Server jeden Tag/Stunde/Minute geladen werden. Für dies kann auch Hilfe einbezogen werden.
+
