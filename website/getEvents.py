@@ -1,12 +1,13 @@
 import http.client
 import json
 import mysql.connector
+from const import const
 
 mydb = mysql.connector.connect(
-  host="127.0.0.1",
-  user="user",
-  password="TEST",
-  database="rescue and tactical"
+  host= const.dbHost,
+  user= const.dbUser,
+  password= const.dbPassword,
+  database= const.dbDatabase
 )
 
 print(mydb)
