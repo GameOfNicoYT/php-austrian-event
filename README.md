@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Zuerst alles durchlesen, danach erst die init.py ausführen!!!
 
 1. Datenbank
@@ -9,3 +10,6 @@
 2. Website
     2.1 Öffne die Datei "./init.py" und lasse die Software eine Tabelle Erstellen und alles Konfigurieren.
     2.2 Die getEvent.py muss jeden Tag/Stunde/Minute (Wie gewunscht) durch ein Bootscript ausgeführt werden.
+=======
+Das getEvent.py script muss extern zum Server jeden Tag/Stunde/Minute geladen werden. Für dies kann auch Hilfe einbezogen werden.
+>>>>>>> 2b0b5ac0af05d182eb98d2c7b8a03e4223df1ea2
