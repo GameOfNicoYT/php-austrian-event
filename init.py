@@ -25,6 +25,8 @@ dbDatabase = input("Name der Datenbank eingeben: ")
 
 f = open("./website/const/const.py", "w")
 f.write(f"""
+import json
+
 # Server
 
 servername = "{servername}"
@@ -42,6 +44,11 @@ Host = "{host}"
 User = "{user}"
 Password = "{password}"
 Database = "{database}"
+
+#EXTRA
+
+arr = [servername, dbHost, dbUser, dbPassword, dbDatabase,Host, User, Password, Database]
+print(json.dumps(arr))
 """)
 f.close()
 
@@ -62,6 +69,8 @@ subprocess.Popen(["python", "./website/getEvents.py"])
 
 print("Installation Completet")
 print("DELETING CONFIG FILES")
+
+time.sleep(1)
 
 os.remove("init.py")
 os.remove("README.md")
