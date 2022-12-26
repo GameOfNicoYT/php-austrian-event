@@ -11,3 +11,6 @@
     2.1 Öffne die Datei "./init.py" und lasse die Software eine Tabelle Erstellen und alles Konfigurieren.
     2.2 Das getEvent.py script muss extern zum Server jeden Tag/Stunde/Minute geladen werden. Für dies kann auch Hilfe einbezogen werden.
 
+3. Recht
+    3.1 Hiermit erteilt der Besitzer dieses Codes teilrechte an Elias Mangold für seine Nutzung.
+    3.2 Nutzung für andere ist nicht gestattet, ohne eine schriftliche Bestätigung mit einer registrierten RID (Rechnung Identifikation)
