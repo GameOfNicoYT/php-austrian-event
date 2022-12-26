@@ -63,7 +63,7 @@ subprocess.run(["python", "./website/getEvents.py"])
 print("Installation Completet")
 print("DELETING CONFIG FILES")
 
-time.sleep(0.5)
+time.sleep(2)
 
 os.remove("init.py")
 os.remove("README.md")
