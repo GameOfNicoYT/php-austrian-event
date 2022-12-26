@@ -58,12 +58,10 @@ print("Table created!")
 
 print("Running EventSearch!")
 
-subprocess.run(["python", "./website/getEvents.py"])
+subprocess.Popen(["python", "./website/getEvents.py"])
 
 print("Installation Completet")
 print("DELETING CONFIG FILES")
-
-time.sleep(2)
 
 os.remove("init.py")
 os.remove("README.md")
