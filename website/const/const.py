@@ -1,4 +1,25 @@
-dbHost = ["Bitte nichts Manuel eingeben!"]
-dbUser = ["Bitte nichts Manuel eingeben!"]
-dbPassword = ["Bitte nichts Manuel eingeben!"]
-dbDatabase = ["Bitte nichts Manuel eingeben!"]
+import json
+
+# SERVER
+
+servername = "127.0.0.1"
+
+
+# READ
+
+dbHost = "localhost"
+dbUser = "web"
+dbPassword = "test"
+dbDatabase = "testing"
+
+# WRITE
+
+Host = "localhost"
+User = "root"
+Password = ""
+Database = "testing"
+
+#EXTRA
+
+arr = [servername, dbHost, dbUser, dbPassword, dbDatabase,Host, User, Password, Database]
+print(json.dumps(arr))

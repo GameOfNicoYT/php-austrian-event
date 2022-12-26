@@ -23,10 +23,14 @@
     <main>
 
         <?php
-        $servername = "127.0.0.1";
-        $username = "user";
-        $password = "TEST";
-        $dbname = "rescue and tactical";
+
+        $output = exec('python ./const/const.py');
+        $result = json_decode($output, true);
+
+        $servername = $result[0];
+        $username = $result[2];
+        $password = $result[3];
+        $dbname = $result[4];
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);

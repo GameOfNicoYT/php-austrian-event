@@ -4,10 +4,10 @@ import mysql.connector
 from const import const
 
 mydb = mysql.connector.connect(
-  host= const.dbHost,
-  user= const.dbUser,
-  password= const.dbPassword,
-  database= const.dbDatabase
+  host= const.Host,
+  user= const.User,
+  password= const.Password,
+  database= const.Database
 )
 
 print(mydb)
