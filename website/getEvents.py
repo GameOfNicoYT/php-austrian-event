@@ -76,5 +76,3 @@ for x in parse:
 
 print("---------------------------- [END EVENTS] ---------------------------- ")
 print("Code executed and ended with code [0]")
-
-x = input()

@@ -23,66 +23,58 @@
     </header>
 
     <main>
+
         <div class="ourTeam">
+            <?php
 
-            <div class="teamCard">
-                <div class="Card" id="andreKaufmannCard">
-                    <img src="./img/personen/Andre_Kaufmann_trans.png" class="andreKaufmannPicture"
-                        alt="André Kaufman, Geschäftsinhaber von Austrian Event Management.">
-                    <div class="backgroundCard">
-                        <h1>André Kaufmann</h1>
-                        <h3>CEO von Austrian Event Management</h3>
-                        <p>Mail: insert-mail@domain.tld</p>
-                    </div>
-                </div>
-            </div>
-            <div class="teamCard">
-                <div class="Card" id="eliasMangoldCard">
-                    <img src="./img/personen/Elias_Mangold_trans.png" class="andreKaufmannPicture"
-                        alt="Elias Mangold, der IT-Administrator.">
-                    <div class="backgroundCard">
-                        <h1>Elias Mangold</h1>
-                        <h3>IT-Administrator</h3>
-                        <p>Mail: insert-mail@domain.tld</p>
-                    </div>
-                </div>
-            </div>
-            <div class="teamCard">
-                <div class="Card" id="ChristianHammererCard">
-                    <img src="./img/personen/Christian_Hammerer_trans.png" class="andreKaufmannPicture"
-                        alt="Christian Hammerer, der Vereins Oberhaupt.">
-                    <div class="backgroundCard">
-                        <h1>Christian Hammerer</h1>
-                        <h3>Vereins Oberhaupt</h3>
-                        <p>Mail: insert-mail@domain.tld</p>
-                    </div>
-                </div>
-            </div>
-            <div class="teamCard">
-                <div class="Card" id="JeremySaringerCard">
-                    <img src="./img/personen/Jeremy_Saringer_trans.png" class="andreKaufmannPicture"
-                        alt="Jeremy Saringer, der Vereins Oberhaupt Stellvertreter.">
-                    <div class="backgroundCard">
-                        <h1>Jeremy Saringer</h1>
-                        <h3>Vereins Oberhaupt Stellvertreter</h3>
-                        <p>Mail: insert-mail@domain.tld</p>
-                    </div>
-                </div>
-            </div>
-            <div class="teamCard">
-                <div class="Card" id="JanaHaldnerCard">
-                    <img src="./img/personen/Jana_Haldner_trans.png" class="andreKaufmannPicture"
-                        alt="Jana Haldner, die Medientechnikerin.">
-                    <div class="backgroundCard">
-                        <h1>Jana Haldner</h1>
-                        <h3>Medientechnikerin</h3>
-                        <p>Mail: insert-mail@domain.tld</p>
+            $output = exec('python ./const/const.py');
+            $result = json_decode($output, true);
 
+            $servername = $result[0];
+            $username = $result[2];
+            $password = $result[3];
+            $dbname = $result[4];
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT Vorname, Zuname, Rolle, EMailAdresse, KurzeBeschreibung, alt FROM employees";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    //inserte CARD DESIGN HERE
+            
+
+                    echo '
+
+                <div class="teamCard">
+                    <div class="Card">
+                        <img src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_trans.png"
+                            alt="' . $row["Vorname"] . $row["Zuname"] . ', ' . $row["alt"] . '.">
+                        <div class="backgroundCard">
+                            <h1>' . $row["Vorname"] .' '. $row["Zuname"] . '</h1>
+                            <h3>' . $row["Rolle"] . '</h3>
+                            <p>Mail: ' . $row["EMailAdresse"] . '</p>
+                            <p style="margin-top: 10px;"> '. $row["KurzeBeschreibung"]. ' </p>
+                        </div>
                     </div>
                 </div>
+        
+                ';
+                    //END OF CARD DESIGN
+                }
+            }
+            $conn->close();
+            echo '</div>'
 
+                ?>
+        </div>
 
-            </div>
     </main>
 
     <footer>
