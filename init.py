@@ -63,6 +63,10 @@ sql = "CREATE TABLE `" + dbDatabase + "`.`old_events` (`ID` TEXT NOT NULL , `Eve
 mycursor.execute(sql)
 sql = "INSERT INTO `employees` (`ID`, `Vorname`, `Zuname`, `Rolle`, `E-MailAdresse`, `Kurze Beschreibung`, `password`) VALUES ('1', 'André', 'Kaufmann', 'CEO von Austrian Event Management', 'andre.kaufmann@domain.tld', 'ANDRE', ''), ('2', 'Elias', 'Mangold', 'IT-Administrator', 'elias.mangold@domain.tld', 'ELIAS', ''), ('3', 'Christian', 'Hammerer', 'Vereins Oberhaupt ', 'christian.hammerer@domain.tld', 'CHRISTIAN', ''), ('4', 'Jeremy', 'Saringer', 'Vereins Oberhaupt Stellvertreter', 'jeremy.saringer@domain.tld', 'JEREMY', ''), ('5', 'Jana', 'Haldner', 'Medientechnikerin', 'jana.haldner@domain.tld', 'JANA', '');";
 mycursor.execute(sql)
+sql = "CREATE TABLE `" + dbDatabase + "`.`clearance` (`ID` INT NOT NULL , `TEXT` TEXT NOT NULL , `Beschreibung` TEXT NOT NULL ) ENGINE = InnoDB;"
+mycursor.execute(sql)
+sql = "INSERT INTO `clearance` (`ID`, `TEXT`, `Beschreibung`) VALUES ('0', 'CEO', 'Chief Executive Office, kurz: Chef'), ('1', 'dbAdmin', 'Datenbank Administration'), ('2', 'Staff', 'Mitarbeiter ohne Datenveränderungsrechte.');"
+mycursor.execute(sql)
 time.sleep(2)
 
 print("Table created!")

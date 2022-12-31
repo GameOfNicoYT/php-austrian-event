@@ -2,6 +2,7 @@
 $Vorname = $_POST['Vorname'];
 $Nachname = $_POST["Nachname"];
 $Rolle = $_POST["Rolle"];
+$clearance = $_POST["clearance"];
 $email = $_POST["EMailAdresse"];
 $kurzeBeschreibung = $_POST["kurzeBeschreibung"];
 $Alt = $_POST["alt"];
@@ -39,6 +40,9 @@ $Alt = $_POST["alt"];
 <input type="text" name="kurzeBeschreibung" id="kurzeBeschreibung" value="' . $kurzeBeschreibung . '" readonly>
 <label for="alt">Alternativ Text:</label>
 <input type="text" name="alt" id="alt" value="' . $Alt . '" readonly>
+<label for="clearance">Staff Level:</label>
+<input type="text" name="clearance" id="clearance" value="' . $clearance . '" readonly>
+
 
 <p>Daten Überprüfen und Passwort eingeben!</p>
 
