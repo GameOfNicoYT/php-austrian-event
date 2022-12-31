@@ -57,7 +57,7 @@ mycursor = mydb.cursor()
 
 sql = "CREATE TABLE `" + dbDatabase + "`.`events` (`ID` TEXT NOT NULL , `EventName` TEXT NOT NULL , `Von` DATETIME NOT NULL , `Bis` DATETIME NOT NULL , `Beschreibung` LONGTEXT NOT NULL , `Bild` TEXT NOT NULL ) ENGINE = InnoDB;"
 mycursor.execute(sql)
-sql = "CREATE TABLE `"+ dbDatabase +"`.`employees` (`ID` INT NOT NULL AUTO_INCREMENT , `Vorname` TEXT NOT NULL , `Zuname` TEXT NOT NULL , `Rolle` TEXT NOT NULL , `E-MailAdresse` TEXT NOT NULL , `Kurze Beschreibung` TEXT NOT NULL , `password` TEXT NOT NULL, PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
+sql = "CREATE TABLE `"+ dbDatabase +"`.`employees` (`ID` INT NOT NULL AUTO_INCREMENT , `Vorname` TEXT NOT NULL , `Zuname` TEXT NOT NULL , `Rolle` TEXT NOT NULL , `clearance` TEXT NOT NULL, `EMailAdresse` TEXT NOT NULL , `KurzeBeschreibung` TEXT NOT NULL ,`alt` TEXT NOT NULL, `password` TEXT NOT NULL, PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
 mycursor.execute(sql)
 sql = "CREATE TABLE `" + dbDatabase + "`.`old_events` (`ID` TEXT NOT NULL , `EventName` TEXT NOT NULL , `Beschreibung` LONGTEXT NOT NULL , `Bild` TEXT NOT NULL ) ENGINE = InnoDB;"
 mycursor.execute(sql)

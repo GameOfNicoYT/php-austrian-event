@@ -1,3 +1,5 @@
+<title>Keine Berechtigung</title>
+
 <?php
 
 $output = exec('python ./const/const.py');
@@ -21,12 +23,17 @@ $user = mysqli_fetch_assoc($result);
 
 // Passwort vergleichen
 if (password_verify($password, $user['password'])) {
-  // Anmeldung erfolgreich
-  session_start();
-  $_SESSION['logged_in'] = true;
-  $_SESSION['email'] = $email;
-  header('Location: admin.php');
-  exit;
+  if ($user["clearance"] <= 1) {
+    // Anmeldung erfolgreich
+    session_start();
+    $_SESSION['logged_in'] = true;
+    $_SESSION['email'] = $email;
+    header('Location: admin.php');
+    exit;
+  }
+  else {
+    echo ("Keine Berechtigung!");
+  }
 } else {
   // Anmeldung fehlgeschlagen
   echo 'Falsche E-Mail-Adresse oder Passwort';

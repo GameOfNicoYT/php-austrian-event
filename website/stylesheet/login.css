@@ -1,0 +1,52 @@
+*{
+    transition: all 0.5s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eed9c4;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.btn-login{
+    width: 100%;
+    background: #faf0e6;
+    border: 0;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.btn-login:hover{
+    background: #d1c4b6;
+    
+}
+
+.pw-reset{
+    margin-top: 10px;
+}
+
+.btn-back{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.btn-back:hover{
+    font-size: 1.75rem;
+}
+
+.div-back{
+    height: 3rem;
+    width: 7.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

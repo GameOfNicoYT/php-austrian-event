@@ -15,6 +15,7 @@ $email = $_POST["EMailAdresse"];
 $kurzeBeschreibung = $_POST["kurzeBeschreibung"];
 $Alt = $_POST["alt"];
 $UserPassword = $_POST["password"];
+$UserPasswordHash = password_hash($UserPassword, PASSWORD_DEFAULT);
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,7 +23,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO `employees` (`ID`, `Vorname`, `Zuname`, `Rolle`, `EMailAdresse`, `KurzeBeschreibung`, `alt`, `password`) VALUES (NULL, '" . $Vorname . "', '" . $Nachname . "', '" . $Rolle . "', '" . $email . "', '" . $kurzeBeschreibung . "', '" . $Alt . "', '" . $UserPassword . "');";
+$sql = "INSERT INTO `employees` (`ID`, `Vorname`, `Zuname`, `Rolle`, `EMailAdresse`, `KurzeBeschreibung`, `alt`, `password`) VALUES (NULL, '" . $Vorname . "', '" . $Nachname . "', '" . $Rolle . "', '" . $email . "', '" . $kurzeBeschreibung . "', '" . $Alt . "', '" . $UserPasswordHash . "');";
 $conn->query($sql);
 
 ?>
