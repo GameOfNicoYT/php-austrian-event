@@ -16,7 +16,7 @@ dbDatabase = "testing"
 
 Host = "localhost"
 User = "root"
-Password = ""
+Password = "Unterrohr!264"
 Database = "testing"
 
 #EXTRA

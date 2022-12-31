@@ -38,7 +38,6 @@ if (password_verify($password, $user['password'])) {
   // Anmeldung fehlgeschlagen
   echo 'Falsche E-Mail-Adresse oder Passwort';
 }
-
 // Verbindung mit der Datenbank schließen
 mysqli_close($conn);
 ?>
