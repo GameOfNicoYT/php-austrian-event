@@ -1,9 +1,9 @@
+
 import json
 
-# SERVER
+# Server
 
 servername = "127.0.0.1"
-
 
 # READ
 
@@ -16,7 +16,7 @@ dbDatabase = "testing"
 
 Host = "localhost"
 User = "root"
-Password = ""
+Password = "Unterrohr!264"
 Database = "testing"
 
 #EXTRA

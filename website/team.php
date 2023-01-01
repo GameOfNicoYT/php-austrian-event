@@ -57,10 +57,10 @@
                         <img src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_trans.png"
                             alt="' . $row["Vorname"] . $row["Zuname"] . ', ' . $row["alt"] . '.">
                         <div class="backgroundCard">
-                            <h1>' . $row["Vorname"] .' '. $row["Zuname"] . '</h1>
+                            <h1>' . $row["Vorname"] . ' ' . $row["Zuname"] . '</h1>
                             <h3>' . $row["Rolle"] . '</h3>
                             <p>Mail: ' . $row["EMailAdresse"] . '</p>
-                            <p style="margin-top: 10px;"> '. $row["KurzeBeschreibung"]. ' </p>
+                            <p style="margin-top: 10px;"> ' . $row["KurzeBeschreibung"] . ' </p>
                         </div>
                     </div>
                 </div>

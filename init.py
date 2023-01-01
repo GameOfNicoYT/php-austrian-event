@@ -57,7 +57,17 @@ mycursor = mydb.cursor()
 
 sql = "CREATE TABLE `" + dbDatabase + "`.`events` (`ID` TEXT NOT NULL , `EventName` TEXT NOT NULL , `Von` DATETIME NOT NULL , `Bis` DATETIME NOT NULL , `Beschreibung` LONGTEXT NOT NULL , `Bild` TEXT NOT NULL ) ENGINE = InnoDB;"
 mycursor.execute(sql)
-sql = "CREATE TABLE `"+ dbDatabase +"`.`employees` (`ID` INT NOT NULL AUTO_INCREMENT , `Vorname` TEXT NOT NULL , `Zuname` TEXT NOT NULL , `Rolle` TEXT NOT NULL , `E-Mail Adresse` TEXT NOT NULL , `Kurze Beschreibung` TEXT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
+sql = "CREATE TABLE `"+ dbDatabase +"`.`employees` (`ID` INT NOT NULL AUTO_INCREMENT , `Vorname` TEXT NOT NULL , `Zuname` TEXT NOT NULL , `Rolle` TEXT NOT NULL , `clearance` TEXT NOT NULL, `EMailAdresse` TEXT NOT NULL , `KurzeBeschreibung` TEXT NOT NULL ,`alt` TEXT NOT NULL, `password` TEXT NOT NULL, PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
+mycursor.execute(sql)
+sql = "CREATE TABLE `" + dbDatabase + "`.`old_events` (`ID` TEXT NOT NULL , `EventName` TEXT NOT NULL , `Beschreibung` LONGTEXT NOT NULL , `Bild` TEXT NOT NULL ) ENGINE = InnoDB;"
+mycursor.execute(sql)
+sql = "INSERT INTO `employees` (`ID`, `Vorname`, `Zuname`, `Rolle`, `EMailAdresse`, `Kurze Beschreibung`, `password`) VALUES ('1', 'André', 'Kaufmann', 'CEO von Austrian Event Management', 'andre.kaufmann@domain.tld', 'ANDRE', ''), ('2', 'Elias', 'Mangold', 'IT-Administrator', 'elias.mangold@domain.tld', 'ELIAS', ''), ('3', 'Christian', 'Hammerer', 'Vereins Oberhaupt ', 'christian.hammerer@domain.tld', 'CHRISTIAN', ''), ('4', 'Jeremy', 'Saringer', 'Vereins Oberhaupt Stellvertreter', 'jeremy.saringer@domain.tld', 'JEREMY', ''), ('5', 'Jana', 'Haldner', 'Medientechnikerin', 'jana.haldner@domain.tld', 'JANA', '')"
+mycursor.execute(sql)
+sql = "CREATE TABLE `" + dbDatabase + "`.`clearance` (`ID` INT NOT NULL , `TEXT` TEXT NOT NULL , `Beschreibung` TEXT NOT NULL ) ENGINE = InnoDB;"
+mycursor.execute(sql)
+sql = "INSERT INTO `clearance` (`ID`, `TEXT`, `Beschreibung`) VALUES ('0', 'CEO', 'Chief Executive Office, kurz: Chef'), ('1', 'dbAdmin', 'Datenbank Administration'), ('2', 'Staff', 'Mitarbeiter ohne Datenveränderungsrechte.');"
+mycursor.execute(sql)
+sql = "CREATE TABLE `" + dbDatabase +"`.`adminmessages` (`ID` INT NOT NULL AUTO_INCREMENT , `name` TEXT NOT NULL , `email` TEXT NOT NULL , `nachricht` LONGTEXT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
 mycursor.execute(sql)
 time.sleep(2)
 
@@ -72,5 +82,5 @@ print("DELETING CONFIG FILES")
 
 time.sleep(1)
 
-os.remove("init.py")
-os.remove("README.md")
+# os.remove("init.py")
+# os.remove("README.md")
