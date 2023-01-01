@@ -22,22 +22,24 @@ $result = mysqli_query($conn, "SELECT * FROM employees WHERE EMailAdresse='$emai
 $user = mysqli_fetch_assoc($result);
 
 // Passwort vergleichen
-if (password_verify($password, $user['password'])) {
-  if ($user["clearance"] <= 1) {
-    // Anmeldung erfolgreich
-    session_start();
-    $_SESSION['logged_in'] = true;
-    $_SESSION['email'] = $email;
-    header('Location: admin.php');
-    exit;
+if (!isset($user['password'])) {
+  echo ("Diese E-Mail existiert nicht!");
+} else
+  if (password_verify($password, $user['password'])) {
+    if ($user["clearance"] <= 1) {
+      // Anmeldung erfolgreich
+      session_start();
+      $_SESSION['logged_in'] = true;
+      $_SESSION['email'] = $email;
+      header('Location: admin.php');
+      exit;
+    } else {
+      echo ("Keine Berechtigung!");
+    }
+  } else {
+    // Anmeldung fehlgeschlagen
+    echo 'Falsches Passwort';
   }
-  else {
-    echo ("Keine Berechtigung!");
-  }
-} else {
-  // Anmeldung fehlgeschlagen
-  echo 'Falsche E-Mail-Adresse oder Passwort';
-}
 // Verbindung mit der Datenbank schließen
 mysqli_close($conn);
 ?>

@@ -67,6 +67,8 @@ sql = "CREATE TABLE `" + dbDatabase + "`.`clearance` (`ID` INT NOT NULL , `TEXT`
 mycursor.execute(sql)
 sql = "INSERT INTO `clearance` (`ID`, `TEXT`, `Beschreibung`) VALUES ('0', 'CEO', 'Chief Executive Office, kurz: Chef'), ('1', 'dbAdmin', 'Datenbank Administration'), ('2', 'Staff', 'Mitarbeiter ohne Datenveränderungsrechte.');"
 mycursor.execute(sql)
+sql = "CREATE TABLE `" + dbDatabase +"`.`adminmessages` (`ID` INT NOT NULL AUTO_INCREMENT , `name` TEXT NOT NULL , `email` TEXT NOT NULL , `nachricht` LONGTEXT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
+mycursor.execute(sql)
 time.sleep(2)
 
 print("Table created!")

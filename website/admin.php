@@ -12,6 +12,7 @@
 <body>
     <div class="admin-wrapper">
         <div class="userHead">
+
             <?php
 
             session_start();
@@ -43,37 +44,38 @@
             $result = mysqli_query($conn, $sql);
 
             // Wenn der Benutzer angemeldet ist, den Rest der Seite anzeigen
-            echo ('<h2 id="h2-greeting" >' . 'Willkommen, ' . $_SESSION['email'] . "</h2>");
+            echo ('<div class="div-greeting"><h2 class="h2-greeting">' . 'Willkommen, ' . $_SESSION['email'] . "</h2></div>");
 
-            while($row = mysqli_fetch_assoc($result)) {
-                echo ('<img class="imgUser" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_trans.png">');
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo ('<div class="div-image"><a href="./user.php"><img class="imgUser" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_pfb.png"></a></div>');
             }
 
 
-                ?>
+            ?>
 
 
 
         </div>
-        <form class="form" action="./addUser.php" method="post">
-            <h4>Neue Staffmember hinzufügen:</h4>
-            <label for="Vorname">Vorname:</label>
-            <input type="text" name="Vorname" id="Vorname">
-            <label for="Nachname">Nachname:</label>
-            <input type="text" name="Nachname" id="Nachname">
-            <label for="Rolle">Rolle:</label>
-            <input type="text" name="Rolle" id="Rolle">
-            <label for="clearance">Freigabestufe:</label>
-            <input type="text" name="clearance" id="clearance">
-            <label for="EMailAdresse">EMail: </label>
-            <input type="email" name="EMailAdresse" id="EMailAdresse">
-            <label for="kurzeBeschreibung">Kurze Beschreibung:</label>
-            <input type="text" name="kurzeBeschreibung" id="kurzeBeschreibung">
-            <label for="alt">Alternativ Text:</label>
-            <input type="text" name="alt" id="alt">
-            <button style="margin-top: 10px;" type="submit">Absenden</button>
-        </form>
-        <a href="Logout.php">Abmelden</a>
+        <div class="actionsFlex">
+            <form class="form" action="./addUser.php" method="post">
+                <h4>Neue Staffmember hinzufügen:</h4>
+                <label for="Vorname">Vorname:</label>
+                <input type="text" name="Vorname" id="Vorname">
+                <label for="Nachname">Nachname:</label>
+                <input type="text" name="Nachname" id="Nachname">
+                <label for="Rolle">Rolle:</label>
+                <input type="text" name="Rolle" id="Rolle">
+                <label for="clearance">Freigabestufe:</label>
+                <input type="text" name="clearance" id="clearance">
+                <label for="EMailAdresse">EMail: </label>
+                <input type="email" name="EMailAdresse" id="EMailAdresse">
+                <label for="kurzeBeschreibung">Kurze Beschreibung:</label>
+                <input type="text" name="kurzeBeschreibung" id="kurzeBeschreibung">
+                <label for="alt">Alternativ Text:</label>
+                <input type="text" name="alt" id="alt">
+                <button style="margin-top: 10px;" type="submit">Absenden</button>
+            </form>
+        </div>
     </div>
 </body>
 
