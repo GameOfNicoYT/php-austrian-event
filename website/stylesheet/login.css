@@ -1,5 +1,3 @@
-
-
 body {
     margin: 0;
     padding: 0;
@@ -49,10 +47,35 @@ main {
     align-items: center;
 }
 
+.UserCardCard{
+    background: #eed9c4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.UserCardCard h3{
+    text-align: center;
+    padding-bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.editUser {
+    width: 45%;
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #faf0e6;
+    padding: 10px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     background: #faf0e6;
@@ -72,23 +95,42 @@ main {
     cursor: pointer;
 }
 
-.imgUser:hover{
+.imgUser:hover {
     height: 110%;
     background: #cfbeac;
 }
 
-.userHead{
+.UserCard {
+    text-decoration: none;
+    width: 30%;
+    height: auto;
+    margin: 10px;
+}
+
+#imUserAdmin {
+    width: 90%;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.userHead {
     width: 100%;
     height: 15vh;
     display: flex;
 }
 
-.div-greeting{
+.admin-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.div-greeting {
     width: 50%;
     display: flex;
 }
 
-.div-image{
+.div-image {
     width: 50%;
     height: 10vh;
     display: flex;
@@ -101,32 +143,33 @@ main {
     margin: auto;
 }
 
-.actionsFlex{
+.actionsFlex {
+    width: 45%;
     display: flex;
     flex-wrap: wrap;
 }
 
-form{
+form {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.label{
+.label {
     font-size: 1rem;
 }
 
-.addUserForm{
+.addUserForm {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
 }
 
-.FormButtonSend{
+.FormButtonSend {
     margin-top: 10px;
 }
 
-.info{
+.info {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
