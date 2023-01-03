@@ -76,6 +76,13 @@
                 <button style="margin-top: 10px;" type="submit">Absenden</button>
             </form>
         </div>
+        <div class="editUser">
+            <?php
+            
+            
+
+            ?>
+        </div>
     </div>
 </body>
 
