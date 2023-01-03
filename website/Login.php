@@ -20,6 +20,13 @@
             <input type="email" id="email" name="email"><br>
             <label for="password">Passwort:</label><br>
             <input type="password" id="password" name="password"><br><br>
+            <?php
+            
+            if(isset($_GET["error"])){
+                echo ("<h3>Falsches Passwort</h3>");
+            }
+
+            ?>
             <input class="btn-login" type="submit" value="Anmelden">
         </form>
         <a class="pw-reset" href="./help/contact.php">Passwort Vergessen</a>

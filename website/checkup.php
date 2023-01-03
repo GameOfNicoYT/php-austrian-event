@@ -26,19 +26,14 @@ if (!isset($user['password'])) {
   echo ("Diese E-Mail existiert nicht!");
 } else
   if (password_verify($password, $user['password'])) {
-    if ($user["clearance"] <= 1) {
-      // Anmeldung erfolgreich
-      session_start();
-      $_SESSION['logged_in'] = true;
-      $_SESSION['email'] = $email;
-      header('Location: admin.php');
-      exit;
-    } else {
-      echo ("Keine Berechtigung!");
-    }
+    // Anmeldung erfolgreich
+    session_start();
+    $_SESSION['logged_in'] = true;
+    $_SESSION['email'] = $email;
+    header('Location: admin.php');
+
   } else {
-    // Anmeldung fehlgeschlagen
-    echo 'Falsches Passwort';
+    header("Location: ./login.php?error=True");
   }
 // Verbindung mit der Datenbank schließen
 mysqli_close($conn);

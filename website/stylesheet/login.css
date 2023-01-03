@@ -1,6 +1,4 @@
-* {
-    transition: all 0.5s ease;
-}
+
 
 body {
     margin: 0;
@@ -132,4 +130,8 @@ form{
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+* {
+    transition: all 0.5s ease;
 }

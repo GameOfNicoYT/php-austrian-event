@@ -47,7 +47,7 @@
             echo ('<div class="div-greeting"><h2 class="h2-greeting">' . 'Willkommen, ' . $_SESSION['email'] . "</h2></div>");
 
             while ($row = mysqli_fetch_assoc($result)) {
-                echo ('<div class="div-image"><a href="./user.php"><img class="imgUser" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_pfb.png"></a></div>');
+                echo ('<div class="div-image"><a href="./user.php"><img onerror="this.src=`./img/other_pfb.png`" class="imgUser" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_pfb.png" ></a></div>');
             }
 
 
@@ -75,11 +75,13 @@
                 <input type="text" name="alt" id="alt">
                 <button style="margin-top: 10px;" type="submit">Absenden</button>
             </form>
+
+
         </div>
         <div class="editUser">
             <?php
-            
-            
+
+
 
             ?>
         </div>
