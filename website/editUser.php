@@ -12,36 +12,38 @@
 <body>
 
     <div class="div-back">
-        <a class="btn-back" href="./index.php">
+        <a class="btn-back" href="./admin.php">
             < Zurück</a>
     </div>
-    <?php
 
-    $output = exec('python ./const/const.py');
-    $result = json_decode($output, true);
+    <main>
+        <?php
 
-    $servername = $result[0];
-    $username = $result[2];
-    $password = $result[3];
-    $dbname = $result[4];
+        $output = exec('python ./const/const.py');
+        $result = json_decode($output, true);
+
+        $servername = $result[0];
+        $username = $result[2];
+        $password = $result[3];
+        $dbname = $result[4];
 
 
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-    if (!isset($_GET["id"])) {
-        header("Location: admin.php");
-    }
+        if (!isset($_GET["id"])) {
+            header("Location: admin.php");
+        }
 
-    $sql = "SELECT * FROM `employees` WHERE `ID` =" . $_GET["id"];
-    $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo ('
+        $sql = "SELECT * FROM `employees` WHERE `ID` =" . $_GET["id"];
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo ('
         <h1>Benutzer ' . $row["Vorname"] . ' ' . $row["Zuname"] . ' Bearbeiten.</h1>   
         <form class="form" action="./editUserSEND.php" method="post">
         <label for="ID">ID:</label>
@@ -63,19 +65,20 @@
         <div style="display:flex; flex-direction: row;" ><input type="checkbox" id="checkboxAdmin" required> <p>Sicher?</p></div>
         <label for="AdminPW">Password des eingeloggtem Accounts angeben:</label>
         <input type="password" name="AdminPW" id="AdminPW">');
-        if (isset($_GET["error"])) {
-            echo ("Falsches Passwort");
-        }
+            if (isset($_GET["error"])) {
+                echo ("Falsches Passwort");
+            }
 
-        echo (
-            '<button id="btn-Submit" style="margin-top: 10px;" type="submit">Absenden</button>
+            echo (
+                '<button id="btn-Submit" style="margin-top: 10px;" type="submit">Absenden</button>
         </form>');
 
-        if (isset($_GET["success"])) {
-            echo ("<h2>Benutzer erfolgreich Berarbeitet!</h2>");
+            if (isset($_GET["success"])) {
+                echo ("<h2>Benutzer erfolgreich Berarbeitet!</h2>");
+            }
         }
-    }
-    ?>
+        ?>
+    </main>
 
     <script>
         const button = document.getElementById('btn-Submit');

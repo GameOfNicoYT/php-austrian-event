@@ -2,6 +2,9 @@ body {
     margin: 0;
     padding: 0;
     background: #eed9c4;
+}
+
+main{
     display: flex;
     justify-content: center;
     flex-direction: column;
