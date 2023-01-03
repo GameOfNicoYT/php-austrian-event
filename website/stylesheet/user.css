@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #eed9c4;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.Card {
+    width: 25%;
+    background: #faf0e6;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 50%;
+    height: 30px;
+    background: #d8c4b1;
+}
+
+.options a:hover{
+    width: 60%;
+    height: 55px;
+}
+
+.Card img {
+    margin: auto;
+    width: 90%;
+    border-radius: 50%;
+}
+
+.UserWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.btn-back {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.btn-back:hover {
+    font-size: 1.75rem;
+}
+
+.div-back {
+    height: 2rem;
+    width: 50%;
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+@media(max-width: 1480px) {
+    .Card{
+        width: 35%;
+    }
+}
+
+@media(max-width: 1000px) {
+    .Card{
+        width: 60%;
+    }
+}
+
+@media(max-width: 700px) {
+    .form {
+        width: 70%;
+    }
+
+    .Card{
+        width: 80%;
+    }
+}
+
+@media(max-width: 400px) {
+    .form {
+        width: 90%;
+    }
+    .options a{
+        width: 75%;
+    }
+}
+
+* {
+    transition: all 0.5s ease;
+}
