@@ -9,6 +9,24 @@ body {
     height: 80vh;
 }
 
+.btn-back {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.btn-back:hover {
+    font-size: 1.75rem;
+}
+
+.div-back {
+    height: 3rem;
+    width: 7.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form {
     display: flex;
     flex-direction: column;

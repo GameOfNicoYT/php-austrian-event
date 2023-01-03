@@ -10,6 +10,11 @@
 </head>
 
 <body>
+
+    <div class="div-back">
+        <a class="btn-back" href="./index.php">
+            < Zurück</a>
+    </div>
     <?php
 
     $output = exec('python ./const/const.py');
