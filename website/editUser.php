@@ -36,7 +36,8 @@
     $sql = "SELECT * FROM `employees` WHERE `ID` =" . $_GET["id"];
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
-        echo ('    
+        echo ('
+        <h1>Benutzer ' . $row["Vorname"] . ' ' . $row["Zuname"] . ' Bearbeiten.</h1>   
         <form class="form" action="./editUserSEND.php" method="post">
         <label for="ID">ID:</label>
         <input type="text" name="ID" id="ID" value="' . $row["ID"] . '">
@@ -54,18 +55,35 @@
         <input type="text" name="kurzeBeschreibung" id="kurzeBeschreibung" value="' . $row["KurzeBeschreibung"] . '">
         <label for="alt">Alternativ Text:</label>
         <input type="text" name="alt" id="alt" value="' . $row["alt"] . '">
-        <button style="margin-top: 10px;" type="submit">Absenden</button>
-        </form>'
+        <div style="display:flex; flex-direction: row;" ><input type="checkbox" id="checkboxAdmin" required> <p>Sicher?</p></div>
+        <label for="AdminPW">Password des eingeloggtem Accounts angeben:</label>
+        <input type="password" name="AdminPW" id="AdminPW">');
+        if (isset($_GET["error"])) {
+            echo ("Falsches Passwort");
+        }
 
-        );
+        echo (
+            '<button id="btn-Submit" style="margin-top: 10px;" type="submit">Absenden</button>
+        </form>');
+
+        if (isset($_GET["success"])) {
+            echo ("<h2>Benutzer erfolgreich Berarbeitet!</h2>");
+        }
     }
-
-
-
-
-
-
     ?>
+
+    <script>
+        const button = document.getElementById('btn-Submit');
+        const checkbox = document.getElementById('checkboxAdmin');
+
+        button.disabled = true;
+
+        checkbox.addEventListener('change', function () {
+            button.disabled = !this.checked;
+        });
+    </script>
+
+
 </body>
 
 </html>
