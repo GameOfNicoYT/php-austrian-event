@@ -62,9 +62,8 @@ main {
 }
 
 .editUser {
-    width: 45%;
-    margin-left: auto;
-    margin-right: 0;
+    width: 80%;
+    margin:auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -102,9 +101,11 @@ main {
 
 .UserCard {
     text-decoration: none;
-    width: 30%;
+    width: 22.5%;
     height: auto;
-    margin: 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #imUserAdmin {
@@ -122,7 +123,8 @@ main {
 .admin-wrapper {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
 .div-greeting {
@@ -144,7 +146,7 @@ main {
 }
 
 .actionsFlex {
-    width: 45%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
 }

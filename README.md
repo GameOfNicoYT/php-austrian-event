@@ -18,4 +18,4 @@
     4.2 Nutzung für andere ist nicht gestattet, ohne eine schriftliche Bestätigung mit einer registrierten RID (Rechnung Identifikation)
 
 5. Hilfe
-    5.1 Wenn du dir unsicher bist Kontaktiere mich per mail oder privat; mail: info@nicoproyer.at; discord: GameOfNicoYT#0420
+    5.1 Wenn du dir unsicher bist Kontaktiere mich; mail: info@nicoproyer.at; discord: GameOfNicoYT#0420
