@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body onload="console.log('DONE')">
     <header>
 
         <?php
@@ -52,7 +52,7 @@
 
                 <div class="eventsCard">
                     <div class="EventsPictureDiv">
-                        <img src="' . $row["Bild"] . '" class="enventsPictures">
+                        <img loading="lazy" src="' . $row["Bild"] . '" class="enventsPictures">
                     </div>
                     <div class="backgroundCard">
                         <h1>' . $row["EventName"] . '</h1>
@@ -77,13 +77,13 @@
 
                 <div class="eventsCard old">
                     <div class="EventsPictureDiv">
-                        <img src="' . $row["Bild"] . '" class="enventsPictures">
+                        <img loading="lazy" src="' . $row["Bild"] . '" class="enventsPictures">
                     </div>
                     <div class="backgroundCard">
                         <h1>' . $row["Name"] . '</h1>
                         <div style="display: flex; width: 100%"><h3>Vergangenes Event</h3></div>
                         <p>' . $row["Beschreibung"] . '</p>
-                        <div class="EventsAnchorDiv"><a class="EventsAnchor" href="https://tickets.kumscho.com/kumscho/' . $row["ID"] . '/"><p>Tickets Kaufen!</p></a></div>
+                        <div class="EventsAnchorDiv"><a class="EventsAnchor" href="#"><p>Tickets Kaufen!</p></a></div>
                     </div>
                 </div>
             
@@ -98,7 +98,6 @@
     </main>
 
     <footer>
-
         <?php
 
         include("./footer.php")

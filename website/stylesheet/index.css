@@ -281,6 +281,8 @@ ul {
     justify-content: center;
 }
 
+
+
 .old{
     opacity: 80%;
 }
@@ -288,4 +290,8 @@ ul {
 .old h3{
     background-color: #d9b99b;
     color: red;
+}
+
+.old a{
+    cursor: not-allowed;
 }

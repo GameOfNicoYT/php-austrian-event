@@ -26,6 +26,8 @@ $Alt = $_POST["alt"];
 
 <body>
 
+
+
     <?php
 
     echo ('<form class="addUserForm" method="post" action="sendDATA.php">
