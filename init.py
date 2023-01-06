@@ -73,6 +73,23 @@ time.sleep(2)
 
 print("Table created!")
 
+print("Please copy the httpd.conf file, and replace it with the C:/xampp/apache/conf/httpd.conf file")
+
+def check():
+    done = input("Fertig? (Y Yes /N No)")
+
+    if(done == "Y"):
+        return
+    else:
+        print("Du MUSST die Datei jetzt austauschen!")
+        check()
+    
+check()
+
+os.replace("C:/xampp/apache/conf/httpd.conf", "/httpd.conf")
+
+time.sleep(3)
+
 print("Running EventSearch!")
 
 subprocess.Popen(["python", "./website/getEvents.py"])
@@ -82,5 +99,8 @@ print("DELETING CONFIG FILES")
 
 time.sleep(1)
 
-# os.remove("init.py")
-# os.remove("README.md")
+os.remove("init.py")
+os.remove("README.md")
+
+if(os.path.exists("/httpd.conf")):
+    os.remove("httpd.conf")
