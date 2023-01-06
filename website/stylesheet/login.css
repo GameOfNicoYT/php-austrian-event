@@ -25,6 +25,27 @@ main {
 
 }
 
+#passwordHash{
+    height: auto;
+    width: 80%;
+    margin: 30px;
+    padding: 10px;
+    background: #faf0e6;
+}
+
+#passwordHash form{
+    display: flex;
+    flex-direction: column;
+}
+
+#passwordHash form label, #passwordHash form input{
+    margin: 5px;
+}
+
+#passwordHash form input{
+    height: 5vh;
+}
+
 .pw-reset {
     margin-top: 10px;
 }

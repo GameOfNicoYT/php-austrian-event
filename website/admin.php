@@ -19,7 +19,7 @@
         // Wenn der Benutzer nicht angemeldet ist, das Login-Formular anzeigen
         if (!isset($_SESSION['logged_in'])) {
             // Anmeldung formular
-            header('Location: login.html');
+            header('Location: login.php');
             exit;
         }
 
@@ -38,7 +38,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = 'SELECT Vorname, Zuname FROM employees WHERE EMailAdresse="' . $_SESSION['email'] . '"';
+        $sql = 'SELECT Vorname, Zuname, clearance FROM employees WHERE EMailAdresse="' . $_SESSION['email'] . '"';
 
         $result = mysqli_query($conn, $sql);
 
@@ -47,68 +47,14 @@
 
         while ($row = mysqli_fetch_assoc($result)) {
             echo ('<div class="div-image"><a href="./user.php"><img onerror="this.src=`./img/other_pfb.png`" class="imgUser" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_pfb.png" ></a></div>');
+
+            echo ("</div>");
+            if ($row["clearance"] <= 1) {
+                include("./adminpannelAssets/admin.php");
+            }
         }
 
 
         ?>
-
-
-
-    </div>
-    <div class="admin-wrapper">
-
-        <div class="actionsFlex">
-            <form class="form" action="./addUser.php" method="post">
-                <h4>Neue Staffmember hinzufügen:</h4>
-                <label for="Vorname">Vorname:</label>
-                <input type="text" name="Vorname" id="Vorname">
-                <label for="Nachname">Nachname:</label>
-                <input type="text" name="Nachname" id="Nachname">
-                <label for="Rolle">Rolle:</label>
-                <input type="text" name="Rolle" id="Rolle">
-                <label for="clearance">Freigabestufe:</label>
-                <input type="text" name="clearance" id="clearance">
-                <label for="EMailAdresse">EMail: </label>
-                <input type="email" name="EMailAdresse" id="EMailAdresse">
-                <label for="kurzeBeschreibung">Kurze Beschreibung:</label>
-                <input type="text" name="kurzeBeschreibung" id="kurzeBeschreibung">
-                <label for="alt">Alternativ Text:</label>
-                <input type="text" name="alt" id="alt">
-                <button style="margin-top: 10px;" type="submit">Absenden</button>
-            </form>
-
-
-        </div>
-        <div class="editUser">
-            <?php
-
-            $output = exec('python ./const/const.py');
-            $result = json_decode($output, true);
-
-            $servername = $result[0];
-            $username = $result[6];
-            $password = $result[7];
-            $dbname = $result[4];
-
-            $sql = "SELECT ID, Vorname, Zuname, Rolle, clearance, EMailAdresse, KurzeBeschreibung, alt FROM employees";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo ('
-                    
-                        <a href="./editUser.php?id=' . $row["ID"] . '" class="UserCard"><div class="UserCardCard">
-                        
-                        <img onerror="this.src=`./img/other_pfb.png`" id="imUserAdmin" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_pfb.png" >
-                        <h3>' . $row["Vorname"] . " " . $row["Zuname"] .'</h3>
-                        </div></a>
-                    
-                        ');
-                }
-            }
-
-            ?>
-        </div>
-    </div>
 </body>
-
 </html>

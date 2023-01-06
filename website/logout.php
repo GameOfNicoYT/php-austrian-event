@@ -2,6 +2,6 @@
 session_start();
 session_destroy();
 echo ($_SESSION["email"]);
-header('Location: login.html');
+header('Location: login.php');
 
 ?>
