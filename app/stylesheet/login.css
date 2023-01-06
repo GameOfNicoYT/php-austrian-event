@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #eed9c4;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.btn-login {
+    width: 100%;
+    background: #faf0e6;
+    border: 0;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: #d1c4b6;
+
+}
+
+#passwordHash{
+    height: auto;
+    width: 80%;
+    margin: 30px;
+    padding: 10px;
+    background: #faf0e6;
+}
+
+#passwordHash form{
+    display: flex;
+    flex-direction: column;
+}
+
+#passwordHash form label, #passwordHash form input{
+    margin: 5px;
+}
+
+#passwordHash form input{
+    height: 5vh;
+}
+
+.pw-reset {
+    margin-top: 10px;
+}
+
+.btn-back {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.btn-back:hover {
+    font-size: 1.75rem;
+}
+
+.div-back {
+    height: 3rem;
+    width: 7.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserCardCard{
+    background: #eed9c4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.UserCardCard h3{
+    text-align: center;
+    padding-bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.editUser {
+    width: 80%;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #faf0e6;
+    padding: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #faf0e6;
+    padding: 20px;
+}
+
+.logout {
+    width: 100%;
+    height: 40vh;
+}
+
+.imgUser {
+    height: 100%;
+    border-radius: 50%;
+    border: solid black 1px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.imgUser:hover {
+    height: 110%;
+    background: #cfbeac;
+}
+
+.UserCard {
+    text-decoration: none;
+    width: 22.5%;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#imUserAdmin {
+    width: 90%;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.userHead {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+}
+
+.admin-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-greeting {
+    width: 50%;
+    display: flex;
+}
+
+.div-image {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.h2-greeting {
+    width: 100%;
+    margin-left: 10px;
+    margin: auto;
+}
+
+.actionsFlex {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 1rem;
+}
+
+.addUserForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.FormButtonSend {
+    margin-top: 10px;
+}
+
+.info {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+* {
+    transition: all 0.5s ease;
+}
