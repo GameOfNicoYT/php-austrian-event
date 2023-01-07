@@ -1,7 +1,7 @@
 <div class="admin-wrapper">
 
     <div class="actionsFlex">
-        <form class="form" action="./addUser.php" method="post">
+        <form class="form" action="./addUser.php" method="post" enctype="multipart/form-data">
             <h4>Neue Staffmember hinzufügen:</h4>
             <label for="Vorname">Vorname:</label>
             <input type="text" name="Vorname" id="Vorname" required>
@@ -17,8 +17,6 @@
             <input type="text" name="kurzeBeschreibung" id="kurzeBeschreibung" required>
             <label for="alt">Alternativ Text:</label>
             <input type="text" name="alt" id="alt" required>
-            <!-- <label for="image">Bild anhängen: </label>
-            <input type="file" name="image" id="image" accept=".png" required> -->
             <button style="margin-top: 10px;" type="submit">Absenden</button>
         </form>
 

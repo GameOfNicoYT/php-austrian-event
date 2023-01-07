@@ -6,11 +6,6 @@ $clearance = $_POST["clearance"];
 $email = $_POST["EMailAdresse"];
 $kurzeBeschreibung = $_POST["kurzeBeschreibung"];
 $Alt = $_POST["alt"];
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
