@@ -12,7 +12,7 @@
 
     if (!isset($_SESSION['logged_in'])) {
         // Anmeldung formular
-        header('Location: login.html');
+        header('Location: login.php');
         exit;
     }
 
@@ -51,6 +51,7 @@
                     <h3 style="text-align: center; font-size: 1.5rem;">Hi ' . $row["Vorname"] . " " . $row["Zuname"] . ' wie gehts?</h3>
             <div class="options">
                 <a href="./help/passwort-wechseln.php">Passwort Vergessen</a>
+                <a href="./help/contact.php">Einen Admin kontaktieren.</a>
                 <a href="./logout.php">Abmelden</a>
             </div>
 

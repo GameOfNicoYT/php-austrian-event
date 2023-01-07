@@ -61,7 +61,7 @@ sql = "CREATE TABLE `"+ dbDatabase +"`.`employees` (`ID` INT NOT NULL AUTO_INCRE
 mycursor.execute(sql)
 sql = "CREATE TABLE `" + dbDatabase + "`.`old_events` (`ID` TEXT NOT NULL , `EventName` TEXT NOT NULL , `Beschreibung` LONGTEXT NOT NULL , `Bild` TEXT NOT NULL ) ENGINE = InnoDB;"
 mycursor.execute(sql)
-sql = "INSERT INTO `employees` (`ID`, `Vorname`, `Zuname`, `Rolle`, `EMailAdresse`, `Kurze Beschreibung`, `password`) VALUES ('1', 'André', 'Kaufmann', 'CEO von Austrian Event Management', 'andre.kaufmann@domain.tld', 'ANDRE', ''), ('2', 'Elias', 'Mangold', 'IT-Administrator', 'elias.mangold@domain.tld', 'ELIAS', ''), ('3', 'Christian', 'Hammerer', 'Vereins Oberhaupt ', 'christian.hammerer@domain.tld', 'CHRISTIAN', ''), ('4', 'Jeremy', 'Saringer', 'Vereins Oberhaupt Stellvertreter', 'jeremy.saringer@domain.tld', 'JEREMY', ''), ('5', 'Jana', 'Haldner', 'Medientechnikerin', 'jana.haldner@domain.tld', 'JANA', '')"
+sql = "INSERT INTO `employees` (`ID`, `Vorname`, `Zuname`, `Rolle`, `EMailAdresse`, `Kurze Beschreibung`, `password`) VALUES ('1', 'Andre', 'Kaufmann', 'CEO' 'andre.kaufmann@domain.tld', 'ANDRE', '$2y$10$Oa33WEy4/l3Sa9kzWlkE2.Qcni/NDigAhbxmokNdg0O61B2yPn0jq/')"
 mycursor.execute(sql)
 sql = "CREATE TABLE `" + dbDatabase + "`.`clearance` (`ID` INT NOT NULL , `TEXT` TEXT NOT NULL , `Beschreibung` TEXT NOT NULL ) ENGINE = InnoDB;"
 mycursor.execute(sql)

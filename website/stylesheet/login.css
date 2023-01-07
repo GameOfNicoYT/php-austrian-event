@@ -12,6 +12,14 @@ main {
     height: 80vh;
 }
 
+#email{
+    width: 100%;
+}
+
+#password{
+    width: 100%;
+}
+
 .btn-login {
     width: 100%;
     background: #faf0e6;

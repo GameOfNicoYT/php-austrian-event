@@ -23,7 +23,7 @@ $user = mysqli_fetch_assoc($result);
 
 // Passwort vergleichen
 if (!isset($user['password'])) {
-  echo ("Diese E-Mail existiert nicht!");
+  header("Location: ./login.php?email=false");
 } else
   if (password_verify($password, $user['password'])) {
     // Anmeldung erfolgreich

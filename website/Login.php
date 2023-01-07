@@ -25,6 +25,9 @@
             if(isset($_GET["error"])){
                 echo ("<h3>Falsches Passwort</h3>");
             }
+            if(isset($_GET["email"])){
+                echo ("<h3>E-Mail Adresse nicht registriert!</h3>");
+            }
 
             ?>
             <input class="btn-login" type="submit" value="Anmelden">
