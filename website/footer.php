@@ -9,7 +9,7 @@
     </div>
     <div class="footerBrand">
         <p>NAME OF WEBSITE</p>
-        <p>© nicoproyer.at 2019-2023</p>
+        <p>© eventmanagement.at 2019-2023</p>
     </div>
     <div class="googleMaps">
         <iframe
