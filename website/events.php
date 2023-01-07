@@ -10,101 +10,129 @@
     <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
 </head>
 
-<body onload="console.log('DONE')">
-    <header>
+<body>
 
-        <?php
+<?php
 
-        include("./header.php")
+?>
 
-            ?>
-    </header>
+    <div style="background: #eed9c4;" id="loading">
 
-    <main>
+        <h2>Events werden geladen!</h2>
+        <img src="./img/loading.gif">
 
-        <?php
+    </div>
 
-        $output = exec('python ./const/const.py');
-        $result = json_decode($output, true);
+    <div id="content">
+        <header>
 
-        $servername = $result[0];
-        $username = $result[2];
-        $password = $result[3];
-        $dbname = $result[4];
+            <?php
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+            include("./header.php")
 
-        $sql = "SELECT ID, EventName , Von, Bis, Beschreibung, Bild FROM events";
-        $result = $conn->query($sql);
-        echo '<div class="eventsCards">';
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while ($row = $result->fetch_assoc()) {
-                //inserte CARD DESIGN HERE
-                // echo "BESCH: " . $row["Beschreibung"]. "<br>";
-        
-                echo '
+                ?>
+        </header>
 
-                <div class="eventsCard">
-                    <div class="EventsPictureDiv">
-                        <img loading="lazy" src="' . $row["Bild"] . '" class="enventsPictures">
-                    </div>
-                    <div class="backgroundCard">
-                        <h1>' . $row["EventName"] . '</h1>
-                        <p>' . $row["Beschreibung"] . '</p>
-                        <div class="EventsAnchorDiv"><a class="EventsAnchor" href="https://tickets.kumscho.com/kumscho/' . $row["ID"] . '/"><p>Tickets Kaufen!</p></a></div>
-                    </div>
-                </div>
-            
-            ';
-                //END OF CARD DESIGN
+        <main>
+
+            <?php
+
+            $output = exec('python ./const/const.py');
+            $result = json_decode($output, true);
+
+            $servername = $result[0];
+            $username = $result[2];
+            $password = $result[3];
+            $dbname = $result[4];
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
             }
-        }
-        $sql = "SELECT ID, Name, Beschreibung, Bild FROM old_events";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while ($row = $result->fetch_assoc()) {
-                //inserte CARD DESIGN HERE
-                // echo "BESCH: " . $row["Beschreibung"]. "<br>";
-        
-                echo '
 
-                <div class="eventsCard old">
-                    <div class="EventsPictureDiv">
-                        <img loading="lazy" src="' . $row["Bild"] . '" class="enventsPictures">
-                    </div>
-                    <div class="backgroundCard">
-                        <h1>' . $row["Name"] . '</h1>
-                        <div style="display: flex; width: 100%"><h3>Vergangenes Event</h3></div>
-                        <p>' . $row["Beschreibung"] . '</p>
-                        <div class="EventsAnchorDiv"><a class="EventsAnchor" href="#"><p>Tickets Kaufen!</p></a></div>
-                    </div>
-                </div>
+            $sql = "SELECT ID, EventName , Von, Bis, Beschreibung, Bild FROM events";
+            $result = $conn->query($sql);
+            echo '<div class="eventsCards">';
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    //inserte CARD DESIGN HERE
+                    // echo "BESCH: " . $row["Beschreibung"]. "<br>";
             
-            ';
-                //END OF CARD DESIGN
+                    echo '
+
+        <div class="eventsCard">
+            <div class="EventsPictureDiv">
+                <img loading="lazy" src="' . $row["Bild"] . '" class="enventsPictures">
+            </div>
+            <div class="backgroundCard">
+                <h1>' . $row["EventName"] . '</h1>
+                <p>' . $row["Beschreibung"] . '</p>
+                <div class="EventsAnchorDiv"><a class="EventsAnchor" href="https://tickets.kumscho.com/kumscho/' . $row["ID"] . '/"><p>Tickets Kaufen!</p></a></div>
+            </div>
+        </div>
+    
+    ';
+                    //END OF CARD DESIGN
+                }
             }
-        }
-        $conn->close();
-        echo '</div>'
-            ?>
+            $sql = "SELECT ID, Name, Beschreibung, Bild FROM old_events";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    //inserte CARD DESIGN HERE
+                    // echo "BESCH: " . $row["Beschreibung"]. "<br>";
+            
+                    echo '
 
-    </main>
+        <div class="eventsCard old">
+            <div class="EventsPictureDiv">
+                <img loading="lazy" src="' . $row["Bild"] . '" class="enventsPictures">
+            </div>
+            <div class="backgroundCard">
+                <h1>' . $row["Name"] . '</h1>
+                <div style="display: flex; width: 100%"><h3>Vergangenes Event</h3></div>
+                <p>' . $row["Beschreibung"] . '</p>
+                <div class="EventsAnchorDiv"><a class="EventsAnchor" href="#"><p>Tickets Kaufen!</p></a></div>
+            </div>
+        </div>
+    
+    ';
+                    //END OF CARD DESIGN
+                }
+            }
+            $conn->close();
+            echo '</div>'
+                ?>
 
-    <footer>
-        <?php
+        </main>
 
-        include("./footer.php")
+        <footer>
+            <?php
 
-            ?>
+            include("./footer.php")
 
-    </footer>
+                ?>
+
+        </footer>
+    </div>
+
+    <script>
+        let content = document.getElementById("content")
+        let loading = document.getElementById("loading")
+
+
+
+         window.onload = function () {
+             content.style.display = "block"
+             window.location.href = './events.php#content';
+             loading.style.top = "-100vh"
+
+         }
+    </script>
 </body>
 
 </html>

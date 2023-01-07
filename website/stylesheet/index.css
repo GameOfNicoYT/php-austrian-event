@@ -9,6 +9,20 @@ body {
     background-color: #eed9c4;
 }
 
+#loading {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 .header a {
     height: 100%;
     width: 10vh;
@@ -291,7 +305,8 @@ ul {
 * {
     margin: 0;
     padding: 0;
-    transition: all 0.2s ease-in;
+    transition: all 0.5s ease-in;
     scroll-behavior: smooth;
     font-family: "avenirbook", Arial, Helvetica, sans-serif;
+    z-index: 1;
 }
