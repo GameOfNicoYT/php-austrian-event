@@ -39,8 +39,8 @@ print("------------------------------ [START EVENTS] ---------------------------
 def getDATA(token):
     id = json.loads(parse[token]["name"])["de"].lower().replace(" ", "-").replace('"', '')
     EventName = json.loads(parse[token]["name"])["de"]
-    dateFrom = parse[token]["date_from"]
-    dateTo = parse[token]["date_to"]
+    dateFrom = parse[token]["date_from"][:-1]
+    dateTo = parse[token]["date_to"][:-1]
     description = json.loads(parse[token]["event_description"])["de"]
     url = "https://tickets.kumscho.com/" + parse[token]["logo_imageurl"]
 

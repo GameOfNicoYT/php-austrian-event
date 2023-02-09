@@ -39,14 +39,12 @@ print("------------------------------ [START EVENTS] ---------------------------
 def getOldDATA(token):
     id = json.loads(parse[token]["name"])["de"].lower().replace(" ", "-").replace('"', '')
     EventName = json.loads(parse[token]["name"])["de"]
-    dateFrom = parse[token]["date_from"]
-    dateTo = parse[token]["date_to"]
     description = json.loads(parse[token]["event_description"])["de"]
     url = "https://tickets.kumscho.com/" + parse[token]["logo_imageurl"]
 
     arr = [id, EventName, description, url]
 
-    sql = "INSERT INTO old_events (ID, EventName, Beschreibung, Bild) VALUES (%s, %s, %s, %s)"
+    sql = "INSERT INTO old_events (ID, Name, Beschreibung, Bild) VALUES (%s, %s, %s, %s)"
 
     val = (arr[0], arr[1], arr[2], arr[3])
 
