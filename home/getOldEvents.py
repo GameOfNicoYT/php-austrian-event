@@ -37,7 +37,7 @@ print("------------------------------ [START EVENTS] ---------------------------
 
 
 def getOldDATA(token):
-    id = json.loads(parse[token]["name"])["de"].lower().replace(" ", "-").replace('"', '')
+    id = parse[token]["slug"]
     EventName = json.loads(parse[token]["name"])["de"]
     description = json.loads(parse[token]["event_description"])["de"]
     url = "https://tickets.kumscho.com/" + parse[token]["logo_imageurl"]

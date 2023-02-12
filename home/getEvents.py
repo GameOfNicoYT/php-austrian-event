@@ -37,14 +37,27 @@ print("------------------------------ [START EVENTS] ---------------------------
 
 
 def getDATA(token):
-    id = json.loads(parse[token]["name"])["de"].lower().replace(" ", "-").replace('"', '')
+    id = parse[token]["slug"]
     EventName = json.loads(parse[token]["name"])["de"]
     dateFrom = parse[token]["date_from"][:-1]
     dateTo = parse[token]["date_to"][:-1]
     description = json.loads(parse[token]["event_description"])["de"]
+
+    spliter = "<strong>"
+    splitertwo = "</strong>"
+
+    split_text = description.split(splitertwo)
+    description = split_text[0]
+
+
+    split_text = description.split(spliter)
+    descriptionFinish = spliter.join(split_text[1:])
+
+    print(descriptionFinish)
+
     url = "https://tickets.kumscho.com/" + parse[token]["logo_imageurl"]
 
-    arr = [id, EventName, dateFrom, dateTo, description, url]
+    arr = [id, EventName, dateFrom, dateTo, descriptionFinish, url]
 
     sql = "INSERT INTO events (ID, EventName, Von, Bis, Beschreibung, Bild) VALUES (%s, %s, %s, %s, %s, %s)"
 
