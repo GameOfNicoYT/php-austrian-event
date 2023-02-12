@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMIN-PANEL</title>
     <link rel="stylesheet" href="./stylesheet/login.css">
+    <link rel="stylesheet" href="./stylesheet/admin.css">
 </head>
 
 <body>
@@ -51,6 +52,7 @@
             echo ("</div>");
             if ($row["clearance"] <= 1) {
                 include("./adminpannelAssets/admin.php");
+                include("./adminpannelAssets/adminMessages.php");
             }
         }
 

@@ -1,0 +1,36 @@
+.adminMessagesTable {
+    width: 80%;
+    height: auto;
+}
+
+.adminMessagesTable td,
+th {
+    border: 1px solid black;
+}
+
+.adminMessagesTable td.button {
+    border: 0;
+}
+
+.adminMessagesTable td.button button {
+    width: 100%;
+}
+
+.adminMessageCard {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #faf0e6;
+    padding: 10px;
+}
+
+.adminMessageCard table{
+    width: 100%
+}
+
+.adminMessageCard h1 {
+    margin-bottom: 15px;
+}
