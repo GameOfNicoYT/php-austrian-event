@@ -39,7 +39,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = 'SELECT Vorname, Zuname, clearance FROM employees WHERE EMailAdresse="' . $_SESSION['email'] . '"';
+        $sql = 'SELECT Vorname, Zuname, clearance, password FROM employees WHERE EMailAdresse="' . $_SESSION['email'] . '"';
 
         $result = mysqli_query($conn, $sql);
 
@@ -50,13 +50,19 @@
             echo ('<div class="div-image"><a href="./user.php"><img onerror="this.src=`./img/other_pfb.png`" class="imgUser" src="./img/personen/' . $row["Vorname"] . '_' . $row["Zuname"] . '_pfb.png" ></a></div>');
 
             echo ("</div>");
+            echo ('<div class="admin-wrapper">');
+            if ($row["password"] === "SETUP") {
+                include("./adminpannelAssets/first_setup.php");
+            }
             if ($row["clearance"] <= 1) {
                 include("./adminpannelAssets/admin.php");
                 include("./adminpannelAssets/adminMessages.php");
             }
+            echo("</div>");
         }
 
 
         ?>
 </body>
+
 </html>

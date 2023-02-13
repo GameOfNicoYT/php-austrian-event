@@ -27,10 +27,69 @@ th {
     padding: 10px;
 }
 
-.adminMessageCard table{
+.adminMessageCard table {
     width: 100%
 }
 
 .adminMessageCard h1 {
     margin-bottom: 15px;
+}
+
+.FirstSetupPW {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: blink 2s ease-in-out infinite;
+}
+
+.FirstSetupPW form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.firstSetupPWShowButton {
+    width: 100%;
+    background: #fad8b7;
+    border: 0;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstSetupPWShowButton:hover {
+    background: #d1c4b6;
+}
+
+.firstSetupPWForm {
+    width: 80%;
+}
+
+.firstSetupPWForm input {
+    width: 80%;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #faf0e6;
+    }
+
+    25%{
+        background-color: #faf0e6;
+    }
+
+    50% {
+        background-color: rgba(255, 64, 64, 0.75)
+    }
+
+    75%{
+        background-color: #faf0e6;
+    }
+
+    100% {
+        background-color: #faf0e6;
+    }
 }

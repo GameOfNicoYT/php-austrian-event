@@ -25,7 +25,7 @@ $user = mysqli_fetch_assoc($result);
 if (!isset($user['password'])) {
   header("Location: ./login.php?email=false");
 } else
-  if (password_verify($password, $user['password'])) {
+  if (password_verify($password, $user['password']) || "SETUP" === $user["password"]) {
     // Anmeldung erfolgreich
     session_start();
     $_SESSION['logged_in'] = true;
