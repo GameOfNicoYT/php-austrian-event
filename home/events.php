@@ -128,7 +128,7 @@
 
          window.onload = function () {
              content.style.display = "block"
-             window.location.href = './events.php#content';
+             window.location.href = './events#content';
              loading.style.top = "-100vh"
 
          }

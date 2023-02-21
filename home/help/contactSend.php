@@ -26,8 +26,10 @@ while ($row = $result->fetch_assoc()) {
     if ($row["EMailAdresse"] === $email) {
         $sql = "INSERT INTO `adminmessages` (`name`, `email`, `nachricht`, `bearbeitetVon`) VALUES ('" . $name . "', '" . $email . "', '" . $nachricht . "', '-');";
         $conn->query($sql);
+        echo ("success");
         header("Location: ./contact.php?success=true");
     } else {
+        echo ("error");
         header("Location: ./contact.php?error=true");
     }
 }

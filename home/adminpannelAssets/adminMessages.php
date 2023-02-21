@@ -30,12 +30,15 @@
 
 
         if ($result->num_rows > 0) {
-
             echo "<table id='adminMessagesTable' class='adminMessagesTable'><tr><th>ID</th><th>EMail</th><th>Nachricht</th><th>Bearbeitet Von</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["email"] . "</td><td>" . $row["nachricht"] . "</td><td>" . $row["bearbeitetVon"] . "</td><td class='button'><a href='./claimTicket.php?ticketID=" . $row['ID'] . "&supMail=" . $_SESSION['email'] . "'><button>Ticket auf sich nehmen</button></a></td>   <td class='button'><a href='./closeTicket.php?id=" . $row["ID"] . "'><button>Ticket schließen</button></a></td></tr>";
-            }
+                if ($row["bearbeitetVon"] == "-" || $row["bearbeitetVon"] == $_SESSION["email"]) {
+                    echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["email"] . "</td><td>" . $row["nachricht"] . "</td><td>" . $row["bearbeitetVon"] . "</td><td class='button'><a href='./claimTicket.php?ticketID=" . $row['ID'] . "&supMail=" . $_SESSION['email'] . "'><button>Ticket auf sich nehmen</button></a></td>   <td class='button'><a href='./closeTicket.php?id=" . $row["ID"] . "'><button>Ticket schließen</button></a></td></tr>";
+                } else {
+                    echo "0 Offene Tickets";
 
+                }
+            }
             echo "</table>";
         } else {
             echo "0 Offene Tickets";

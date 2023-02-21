@@ -1,4 +1,4 @@
 import subprocess
 
-subprocess.Popen(["python", "website/getEvents.py"])
-subprocess.Popen(["python", "website/getOldEvents.py"])
+subprocess.Popen(["python", "home/getEvents.py"])
+subprocess.Popen(["python", "home/getOldEvents.py"])
